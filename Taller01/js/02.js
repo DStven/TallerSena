@@ -5,8 +5,8 @@ function verificarNumero(){
     let resultado = document.getElementById('resultado');
 
     if (numero > 0 ){
-        resultado.innerHTML = "El numero " + numero + " es mayor que 0";
+        resultado.innerHTML = `El numero ${numero} es mayor que 0`;
     } else {
-         resultado.innerHTML = "El número " + numero + " no es mayor que 0.";
+         resultado.innerHTML = `El número ${numero} no es mayor que 0.`;
     }
 }
