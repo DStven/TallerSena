@@ -20,7 +20,7 @@ function consultarPuntos(){
         return; 
     }
 
-    let seleccionClase = " ";
+    let seleccionClase;
 
     for (let i = 0; i < clases.length; i++){
         if (puntos >= clases[i].puntos){

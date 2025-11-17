@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08</title>
+    <!-- Agregar Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="container form-container">
+            <!-- Enunciado -->
+            <p>Escribir algoritmos que calculen y saquen por pantalla:
+                a. El máximo de tres números introducidos por teclado;<br>
+                b. El mínimo de tres números dados por el usuarios<br>
+                c. El promedio de tres números dados por el usuarioDiseñe algoritmos
+                que permitan<br>
+                d. Determinar si una letra pulsada por el usuario es mayúscula o
+                minúscula.<br>
+                e. Indique si un carácter es un digito numérico.</p>
+
+            <!--Maximo-->
+            <button class="btn btn-primary" onclick="obtnerMaximo()">Numero Maximo</button>
+            <!--Minimo-->
+            <button class="btn btn-primary" onclick="obtenerMinimo()">Numero Minimo</button>
+            <!--Promedio-->
+            <button class="btn btn-primary" onclick="obtenerPromedio()">Promedio</button>
+            <!--Letra Mayuscula - Minuscula-->
+            <button class="btn btn-primary" onclick="letraMayusMinus()">Mayus-Minus</button>
+            <!--Caracter-->
+            <button class="btn btn-primary" onclick="caracter()">Caracter</button>
+
+
+            <!-- resultados -->
+            <div id="resultado"></div>
+        </div>
+    </div>
+
+    <!--scripts-->
+    <script src="../js/08.js"></script>
+    <!--  Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-wEYG3WjdoAGk9Ocl0r2uY9Mw7nzRJSaZoBlz5Ba58bxgtdw2D3bxhGJ7e9p0ym35"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

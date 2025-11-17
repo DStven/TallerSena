@@ -9,7 +9,7 @@ function calcularPago() {
 
     let sueldoB = pagoBase + (comision * carrosVendidos);
 
-    if(carrosVendidos > 15){
+    if (carrosVendidos > 15) {
         sueldoB += bono;
     }
 
@@ -17,12 +17,12 @@ function calcularPago() {
 
     let sueldoN = sueldoB - impuesto;
 
-    let resultado = `
+    let result = `
     Nombre del vendedor: ${nombreVendedor}<br>
     Sueldo Bruto: $${sueldoB.toFixed(2)}<br>
     Impuesto: $${impuesto.toFixed(2)}
     Sueldo Neto: $${sueldoN.toFixed(2)}
     `;
-    let resultadoDiv = document.getElementById('resultado');
-    resultadoDiv.innerHTML = resultado;
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = result;
 }
