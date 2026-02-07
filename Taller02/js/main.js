@@ -1,5 +1,4 @@
 //Ejercicio 1
-
 function ejercicio1() {
     document.getElementById("enunciado").innerHTML = `
     <p>Hacer un algoritmo que imprima el nombre de un producto, clave, precio
@@ -39,9 +38,7 @@ function calcularDescuento() {
         "<br>Total con descuento: $" + total;
 }
 
-
-//ejercicio 2
-
+//Ejercicio 2
 function ejercicio2() {
     document.getElementById("enunciado").innerHTML = `
     <p>Hacer un algoritmo que calcule el total a pagar por la compra de camisas,
@@ -81,7 +78,6 @@ function calcularTotal() {
 }
 
 // Ejercicio 3
-
 function ejercicio3() {
     document.getElementById("enunciado").innerHTML = `
     <p>En un supermercado se hace una promoción, mediante la cual el cliente
@@ -118,7 +114,6 @@ function calcularDescuentoSupermercado() {
 }
 
 //Ejercicio 4
-
 function ejercicio4() {
     document.getElementById("enunciado").innerHTML = `
     <p>Calcular el número de pulsaciones que debe tener una persona por cada 10
@@ -201,7 +196,86 @@ function convertirUnidades() {
         '<br>Peso en toneladas: ' + toneladas;
 }
 
-//ejercicio 21
+//Ejercicio 7
+function ejercicio7() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Un paquete de galletas cuesta $3.500 y contiene 15 galletas, cuánto
+    cuestan X cantidad de galletas de ellas? Elabore un algoritmo para obtener
+    la respuesta.</p>
+
+    <input type="button" value="Calcular Costo" onclick="calcularCostoGalletas()">
+    `;
+}
+
+function calcularCostoGalletas() {
+    var cantidadGalletas, costoPorGalleta, totalCosto;
+    cantidadGalletas = Number(prompt("Ingrese la cantidad de galletas: "));
+    costoPorGalleta = 3500 / 15;
+
+    totalCosto = cantidadGalletas * costoPorGalleta;
+
+    document.getElementById("resultado").innerHTML =
+        'Cantidad de galletas: ' + cantidadGalletas +
+        '<br>Costo por galleta: $' + costoPorGalleta.toFixed(2) +
+        '<br>Total a pagar: $' + totalCosto.toFixed(2);
+}
+
+//Ejercicio 8
+function ejercicio8() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Si 15 cuadernos cuestan $75000, cuánto cuestan X cantidad de
+    cuadernos?. Elabore un algoritmo para hallar la respuesta correcta.</p>
+
+    <input type="button" value="Calcular Costo" onclick="calcularCostoCuadernos()">
+    `;
+}
+
+function calcularCostoCuadernos() {
+    var cantidadCuadernos, costoPorCuaderno, totalCosto;
+    cantidadCuadernos = Number(prompt("Ingrese la cantidad de cuadernos: "));
+    costoPorCuaderno = 75000 / 15;
+
+    totalCosto = cantidadCuadernos * costoPorCuaderno;
+
+    document.getElementById("resultado").innerHTML =
+        'Cantidad de cuadernos: ' + cantidadCuadernos +
+        '<br>Costo por cuaderno: $' + costoPorCuaderno.toFixed(2) +
+        '<br>Total a pagar: $' + totalCosto.toFixed(2);
+}
+
+//Ejercicio 9
+function ejercicio9() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Realizar un programa que cuente de 1 a 200 e imprima en pantalla los
+    números divisibles por 6, y cuando llegue a 200 cuente de forma regresiva
+    hasta 20 e imprima los divisibles por 8.</p>
+
+    <input type="button" value="Contar Divisibles" onclick="contarDivisibles()">
+    `;
+}
+
+function contarDivisibles() {
+    var divisiblesPor6 = [];
+    var divisiblesPor8 = [];
+
+    for (var i  = 1; i <= 200; i++) {
+        if (i % 6 === 0) {
+            divisiblesPor6.push(i);
+        }
+    }
+
+    for (var j = 200; j >= 20; j--) {
+        if (j % 8 === 0) {
+            divisiblesPor8.push(j);
+        }
+    }
+
+    document.getElementById("resultado").innerHTML =
+        'Numeros divisibles por 6 entre 1 y 200: ' + divisiblesPor6.join(', ') +
+        '<br>Numeros divisibles por 8 entre 200 y 20: ' + divisiblesPor8.join(', ');
+}
+
+//Ejercicio 21
 function ejercicio21() {
     document.getElementById("enunciado").innerHTML = `
     <p>Determinar el promedio de una lista 20 de números positivos.</p>
