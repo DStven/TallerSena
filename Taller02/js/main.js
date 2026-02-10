@@ -33,12 +33,13 @@ function calcularDescuento() {
 
     total = precioOriginal - descuento;
 
-    document.getElementById("resultado").innerHTML =
-        "Producto: " + producto +
-        "<br>Clave: " + clave +
-        "<br>Precio original: $" + precioOriginal +
-        "<br>Descuento: $" + descuento +
-        "<br>Total a pagar: $" + total;
+    document.getElementById("resultado").innerHTML = `
+    Producto: ${producto} <br>
+    Clave: ${clave} <br>
+    Precio original: $${precioOriginal} <br>
+    Descuento: $${descuento} <br>
+    Total a pagar: $${total}
+`;
 }
 
 //Ejercicio 2
@@ -71,11 +72,13 @@ function calcularTotal() {
         descuento = total * 0.10;
     }
 
-    document.getElementById("resultado").innerHTML =
-        "Cantidad: " + cantidad +
-        "<br>Total sin descuento: $" + total +
-        "<br>Descuento: $" + descuento +
-        "<br>Total a pagar: $" + (total - descuento);
+    document.getElementById("resultado").innerHTML = `
+    Cantidad: ${cantidad} <br>
+    Total sin descuento: $${total} <br>
+    Descuento: $${descuento} <br>
+    Total a pagar: $${total - descuento}
+`;
+
 }
 
 // Ejercicio 3
@@ -107,11 +110,13 @@ function calcularDescuentoSupermercado() {
         descuento = totalCompra * 0.15;
     }
 
-    document.getElementById("resultado").innerHTML =
-        "Total compra: $" + totalCompra +
-        "<br>Número al azar: " + numAzar +
-        "<br>Descuento: $" + descuento +
-        "<br>Total a pagar: $" + (totalCompra - descuento);
+    document.getElementById("resultado").innerHTML = `
+    Total compra: $${totalCompra} <br>
+    Número al azar: ${numAzar} <br>
+    Descuento: $${descuento} <br>
+    Total a pagar: $${totalCompra - descuento}
+`;
+
 }
 
 //Ejercicio 4
@@ -149,10 +154,12 @@ function calcularPulsaciones() {
         return;
     }
 
-    document.getElementById("resultado").innerHTML =
-        "Edad: " + edad +
-        "<br>Sexo: " + sexo +
-        "<br>Pulsaciones: " + pulsaciones;
+    document.getElementById("resultado").innerHTML = `
+    Edad: ${edad} <br>
+    Sexo: ${sexo} <br>
+    Pulsaciones: ${pulsaciones}
+`;
+
 }
 
 //Ejercicio 5
@@ -173,9 +180,11 @@ function calcularPositivo() {
         return;
     }
 
-    document.getElementById("resultado").innerHTML =
-        "Número negativo: " + numero +
-        "<br>Número positivo: " + Math.abs(numero);
+    document.getElementById("resultado").innerHTML = `
+    Número negativo: ${numero} <br>
+    Número positivo: ${Math.abs(numero)}
+`;
+
 }
 
 //Ejercicio 6
@@ -195,10 +204,11 @@ function convertirUnidades() {
         return;
     }
 
-    document.getElementById("resultado").innerHTML =
-        "Kilogramos: " + kg +
-        "<br>Gramos: " + (kg * 1000) +
-        "<br>Toneladas: " + (kg / 1000);
+    document.getElementById("resultado").innerHTML = `
+    Kilogramos: ${kg} <br>
+    Gramos: ${kg * 1000} <br>
+    Toneladas: ${kg / 1000}
+`;
 }
 
 
@@ -222,9 +232,10 @@ function calcularCostoGalletas() {
         return;
     }
 
-    document.getElementById("resultado").innerHTML =
-        "Precio por galleta: $" + precioUnidad.toFixed(2) +
-        "<br>Total a pagar: $" + (cantidad * precioUnidad).toFixed(2);
+    document.getElementById("resultado").innerHTML = `
+    Precio por galleta: $${precioUnidad.toFixed(2)} <br>
+    Total a pagar: $${(cantidad * precioUnidad).toFixed(2)}
+`;
 }
 
 //Ejercicio 8
@@ -246,9 +257,10 @@ function calcularCostoCuadernos() {
         return;
     }
 
-    document.getElementById("resultado").innerHTML =
-        "Precio por cuaderno: $" + precioUnidad.toFixed(2) +
-        "<br>Total a pagar: $" + (cantidad * precioUnidad).toFixed(2);
+    document.getElementById("resultado").innerHTML = `
+    Precio por cuaderno: $${precioUnidad.toFixed(2)} <br>
+    Total a pagar: $${(cantidad * precioUnidad).toFixed(2)}
+`;
 }
 
 //Ejercicio 9
@@ -274,9 +286,10 @@ function contarDivisibles() {
         if (j % 8 === 0) div8.push(j);
     }
 
-    document.getElementById("resultado").innerHTML =
-        "<b>Divisibles por 6:</b><br>" + div6.join(", ") +
-        "<br><br><b>Divisibles por 8:</b><br>" + div8.join(", ");
+    document.getElementById("resultado").innerHTML = `
+    <b>Divisibles por 6:</b><br>${div6.join(", ")} <br><br>
+    <b>Divisibles por 8:</b><br>${div8.join(", ")}
+`;
 }
 
 //Ejercicio 10
@@ -290,7 +303,7 @@ function ejercicio10() {
     `;
 }
 function calcularEdadPersona(dia, mes, anio) {
-    const fechaNacimiento = new Date(anio, mes - 1, dia); 
+    const fechaNacimiento = new Date(anio, mes - 1, dia);
     const hoy = new Date();
     let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
     const m = hoy.getMonth() - fechaNacimiento.getMonth();
@@ -324,38 +337,432 @@ function calcularEdad() {
         mayor = "Ambos tienen la misma edad";
     }
 
-    document.getElementById("resultado").innerHTML = 
-        nombre1 + " tiene " + edad1 + " años.<br>" +
-        nombre2 + " tiene " + edad2 + " años.<br>" +
-        "La persona mayor es: " + mayor;
+    document.getElementById("resultado").innerHTML = `
+    ${nombre1} tiene ${edad1} años. <br>
+    ${nombre2} tiene ${edad2} años. <br>
+    La persona mayor es: ${mayor}
+`;
 }
+
+//Ejercicio 11
+function ejercicio11() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Un programa que me capture el salario de un empleado y me realice el
+    descuento de pensión y salud, pero si el salario es superior a 1200000 no le
+    debe descontar.</p>
+
+    <input type="button" value="Salario" onClick="salarioEmpleado()">
+
+    `;
+
+}
+
+function salarioEmpleado() {
+    var salario, salarioFinal;
+    var descuentoSalud = 0;
+    var descuentoPension = 0;
+
+    salario = Number(prompt("Ingrese el salario del empleado"));
+
+    if (isNaN(salario) || salario <= 0) {
+        alert("Salario inválido");
+        return;
+    }
+
+    if (salario <= 1200000) {
+        descuentoSalud = salario * 0.04;
+        descuentoPension = salario * 0.04;
+    }
+
+    salarioFinal = salario - descuentoSalud - descuentoPension;
+
+    document.getElementById("resultado").innerHTML = `
+    Salario: $${salario} <br>
+    Descuento de salud: $${descuentoSalud} <br>
+    Descuento de pensión: $${descuentoPension} <br>
+    Salario final: $${salarioFinal}
+`;
+}
+
+
+//Ejercicio 12
+function ejercicio12(){
+    document.getElementById("enunciado").innerHTML = `
+    <p>Un programa que, capture el salario de un empleado, y lo divida por 30
+    dias del mes, también debe capturar los días trabajados y me debe
+    mostrar el total ganado.</p>    
+
+    <input type="button" value="Calcular Salario" onClick="calcularSalario()">
+    `;
+}
+
+function calcularSalario(){
+    var salarioMensual, diasTrabajo,salarioDia, totalGanado;
+
+    salarioMensual = Number(prompt("Ingrese el salario Mensual: "));
+    diasTrabajo = Number(prompt("Ingrese dias trabajados: "));
+
+    if(isNaN(salarioMensual) || salarioMensual <= 0){
+        alert("Salario Invalido");
+        return;
+    }
+
+    if(isNaN(diasTrabajo) || diasTrabajo < 0 || diasTrabajo > 30){
+        alert("Dias trabajados no validos");
+        return;
+    }
+
+    salarioDia = salarioMensual / 30;
+    totalGanado = salarioDia * diasTrabajo;
+
+    document.getElementById("resultado").innerHTML = `
+    Salario mensual: $${salarioMensual} <br>
+    Salario por días: $${salarioDia.toFixed(2)} <br>
+    Días trabajados: ${diasTrabajo} <br>
+    Total ganado: $${totalGanado.toFixed(2)}
+`;
+
+}
+
+//Ejercicio 13
+
+function ejercicio13() {
+    document.getElementById("enunciado").innerHTML = `
     
+    <p>Mientras a<=1500; contar hasta 1500 e imprimir los números divisibles por
+    4 y 5 y decir si son pares o impares. </p>
+
+    <input type="button" value="contador" onClick="contador()">
+    `;
+}
+
+function contador() {
+    var a = 1;
+    var result = '';
+    
+    while(a <= 1500) {
+
+        if(a % 4 === 0 && a % 5 === 0){
+            if (a % 2 === 0){
+                result += a + 'Par <br>';
+            }else {
+                result += a + 'Impar <br>';
+            }
+        }
+
+        a++;
+    }
+
+    document.getElementById("resultado").innerHTML = result;
+}
+
+//Ejercicio 14
+function ejercicio14(){
+    document.getElementById("enunciado").innerHTML = `
+    <p>Elaborar un algoritmo, que tenga 10 números enteros. El programa debe
+    sumar todos los números que sean múltiplos de 3.</p>
+
+    <input type="button" value="contador" onClick="numerosEntero()">
+    `;
+}
+
+function numerosEntero(){
+    var suma = 0;
+    var con = 1;
+    var numeros = [];
+    var multiplos = [];
+
+    while(con <= 10){
+        var num = Number(prompt("Ingresa un numero entero: "));
+        numeros.push(num);
+        if (num % 3 === 0){
+            suma = suma + num;
+            multiplos.push(num);
+        }
+        con ++;
+    }
+
+    document.getElementById("resultado").innerHTML = `
+    Números ingresados: ${numeros.join(", ")} <br>
+    Total de números: 10 <br>
+    Múltiplos de 3: ${multiplos.join(", ")} <br>
+    Suma de múltiplos de 3: ${suma}
+`;
+}
+
+//Ejercicio 15
+function ejercicio15(){
+    document.getElementById("enunciado").innerHTML = `
+    <p>Mostrar las 30 primeras potencias de 3 y la suma de ellos.</p>
+
+    <input type="button" value="Potencia" onclick="sumaPotencia()">
+    `;
+}
+
+function sumaPotencia(){
+
+    var potencia = 1;
+    var suma = 0;
+    var result = '';
+    
+    
+    for(var con = 1; con <= 30; con++){
+        potencia = Math.pow(3, con);
+        result += '3^' + con + ' = ' + potencia + '<br> ';
+        suma += potencia;
+    }
+    result += '<br><b>Suma total: ' + suma + '</b>';
+
+    document.getElementById('resultado').innerHTML = result;
+}
+
+//Ejercicio 16
+function ejercicio16(){
+    document.getElementById('enunciado').innerHTML = `
+    <p>Un programa con 5 alumnos, cada uno con 5 notas. 
+    Calcular el promedio por alumno y mostrar solo los que ganaron.</p>
+    
+    <input type="button" value="Promedio de notas" onclick="promedioAlumnos()">
+    `;
+}
+
+function promedioAlumnos(){
+    var nombre, nota, suma, promedio;
+    var result = '';
+
+    for(var i = 1; i <= 5; i++){
+        nombre = prompt("Nombre del estudiante " + i + ":");
+        suma = 0;
+
+        for(var j = 1; j <= 5; j++){
+            nota = Number(prompt("Ingrese la nota " + j + " de " + nombre + ":"));
+
+            if(isNaN(nota) || nota < 0 || nota > 5){
+                alert("Nota invalida");
+                return;
+            }
+
+            suma += nota;
+        }
+
+        promedio = suma / 5;
+
+        if(promedio >= 3){
+            result += nombre + 
+                ' - Promedio: ' + promedio.toFixed(2) + '<br>';
+        }
+    }
+
+    if(result === ''){
+        result = 'Ningún alumno ganó.';
+    }
+
+    document.getElementById('resultado').innerHTML = result;
+}
+
+//Ejercicio 17
+function ejer17(){
+    document.getElementById('enunciado').innerHTML = `
+    <p>Diseñar un algoritmo, con el dividendo y el divisor y que luego me calcule el
+    residuo y el cociente de dicha división.</p>
+
+    <input type="button" value="Enviar" onclick="division()">
+    `;
+}
+
+function division() {
+    
+    var dividendo = Number(prompt("Ingrese el dividendo:"));
+    var divisor = Number(prompt("Ingrese el divisor:"));
+
+    
+    if (isNaN(dividendo) || isNaN(divisor) || divisor === 0) {
+        alert("Datos no válidos o división por cero");
+        return;
+    }
+
+    
+    var cociente = Math.trunc(dividendo / divisor); 
+    var residuo = dividendo % divisor;
+
+    
+    document.getElementById('resultado').innerHTML =
+        `Dividendo:${dividendo}<br>
+         Divisor: ${divisor}<br>
+         Cociente: ${cociente}<br>
+         Residuo: ${residuo}`;
+}
+
+//Ejercicio 18
+function ejercicio18() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Diseñar un algoritmo que intercambie los valores de dos variables
+    numéricas.</p>
+
+    <input type="button" value="Intercambiar" onclick="intercambiarValores()">
+    `;
+}
+
+function intercambiarValores() {
+    let a = Number(prompt("Ingrese el primer número (a):"));
+    let b = Number(prompt("Ingrese el segundo número (b):"));
+
+    if (isNaN(a) || isNaN(b)) {
+        alert("Ingrese valores válidos");
+        return;
+    }
+
+    let temp = a;
+    a = b;
+    b = temp;
+
+    document.getElementById("resultado").innerHTML = `
+        Valor después del intercambio: <br>
+        a = ${a} <br>
+        b = ${b}
+    `;
+}
+
+//Ejercicio 19
+function ejercicio19() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Diseñar un algoritmo que me permita ingresar un valor inicial y luego un
+    valor final, para luego calcular el valor central de los números.</p>
+
+    <input type="button" value="Calcular Central" onclick="valorCentral()">
+    `;
+}
+
+function valorCentral() {
+    let inicio = Number(prompt("Ingrese el valor inicial:"));
+    let fin = Number(prompt("Ingrese el valor final:"));
+
+    if (isNaN(inicio) || isNaN(fin)) {
+        alert("Valores inválidos");
+        return;
+    }
+
+    let central = (inicio + fin) / 2;
+
+    document.getElementById("resultado").innerHTML = `
+        Valor inicial: ${inicio} <br>
+        Valor final: ${fin} <br>
+        Valor central: ${central}
+    `;
+}
+
+//Ejercicio 20
+function ejercicio20() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Se desea calcular independientemente la suma de los números pares e
+    impares comprendidos entre 1 y 50.</p>
+
+    <input type="button" value="Calcular Sumas" onclick="sumaParesImpares()">
+    `;
+}
+
+function sumaParesImpares() {
+    let sumaPares = 0;
+    let sumaImpares = 0;
+
+    for (let i = 1; i <= 50; i++) {
+        if (i % 2 === 0) sumaPares += i;
+        else sumaImpares += i;
+    }
+
+    document.getElementById("resultado").innerHTML = `
+        Suma de números pares: ${sumaPares} <br>
+        Suma de números impares: ${sumaImpares}
+    `;
+}
 
 //Ejercicio 21
 function ejercicio21() {
     document.getElementById("enunciado").innerHTML = `
     <p>Determinar el promedio de una lista 20 de números positivos.</p>
 
-    <input type="button" value="Calcular Promedio" onclick="calcularPromedio()">
+    <input type="button" value="Calcular Promedio" onclick="promedio20Numeros()">
     `;
 }
 
-function calcularPromedio() {
-    var numInicial, suma, promedio;
-    numInicial = Number(prompt("Ingrese un número inicial: "));
+function promedio20Numeros() {
+    let suma = 0;
+    let numeros = [];
 
-    document.getElementById("resultado").innerHTML = 'el numero inicial fue: ' + numInicial;
-
-    con = 1;
-    suma = 0;
-    while (con <= 20) {
-        suma = suma + numInicial;
-        con++;
-        numInicial++;
+    for (let i = 1; i <= 20; i++) {
+        let num = Number(prompt(`Ingrese el número positivo ${i}:`));
+        if (isNaN(num) || num <= 0) {
+            alert("Número inválido, debe ser positivo");
+            return;
+        }
+        numeros.push(num);
+        suma += num;
     }
 
-    promedio = suma / 20;
+    let promedio = suma / 20;
 
-    document.getElementById("resultado").innerHTML += '<br>el numero final fue: ' + numInicial;
-    document.getElementById("resultado").innerHTML += '<br>el promedio es: ' + promedio;
+    document.getElementById("resultado").innerHTML = `
+        Números ingresados: ${numeros.join(", ")} <br>
+        Suma: ${suma} <br>
+        Promedio: ${promedio.toFixed(2)}
+    `;
 }
+
+//Ejercicio 22
+function ejercicio22() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Diseñar un algoritmo que calcule los 5 primeros números impares que
+    preceden a un numero N</p>
+
+    <input type="button" value="Calcular Impares" onclick="imparesPrecedenN()">
+    `;
+}
+
+function imparesPrecedenN() {
+    let N = Number(prompt("Ingrese un número N:"));
+    if (isNaN(N)) {
+        alert("Número inválido");
+        return;
+    }
+
+    let impares = [];
+    let num = N - 1;
+
+    while (impares.length < 5) {
+        if (num % 2 !== 0) impares.push(num);
+        num--;
+    }
+
+    document.getElementById("resultado").innerHTML = `
+        Los 5 impares que preceden a ${N}: ${impares.join(", ")}
+    `;
+}
+
+//Ejercicio23
+function ejercicio23() {
+    document.getElementById("enunciado").innerHTML = `
+    <p>Hacer un programa que muestre si los cincos primeros numeros impares
+    son múltiples de tres arrancando de 10</p>
+
+    <input type="button" value="Verificar Múltiplos" onclick="imparesMultiploTres()">
+    `;
+}
+
+function imparesMultiploTres() {
+    let impares = [];
+    let contador = 0;
+    let num = 10;
+
+    while (impares.length < 5) {
+        if (num % 2 !== 0) {
+            let esMultiplo3 = (num % 3 === 0) ? "Sí" : "No";
+            impares.push(`${num} -> Múltiplo de 3: ${esMultiplo3}`);
+        }
+        num++;
+    }
+
+    document.getElementById("resultado").innerHTML = `
+        ${impares.join("<br>")}
+    `;
+}
+
